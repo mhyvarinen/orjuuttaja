@@ -1,17 +1,17 @@
-class puppetslaver {
+class orjuuttaja {
 	
 	package {'puppet':
 		ensure => installed,
 	}
 	
 	file {'/etc/default/puppet':
-		content => template ("puppetslaver/puppet"),
+		content => template ("orjuuttaja/puppet"),
 		require => Package ['puppet'],
 		notify => Service ['puppet'],
 	}
 	
 	file { '/etc/puppet/puppet.conf':
-		content => template ("puppetslaver/puppet.conf"),
+		content => template ("orjuuttaja/puppet.conf"),
                 require => Package ['puppet'],
                 notify => Service ['puppet'],
 	}
